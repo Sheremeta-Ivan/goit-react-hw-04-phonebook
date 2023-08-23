@@ -37,8 +37,18 @@ export const Button = styled.button`
   color: #80b0f0;
   font-size: 20px;
   transition: all 300ms ease-in;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   &:hover {
     background-color: #80b0f0;
     color: #fff;
+    svg {
+      fill: #fff;
+    }
+  }
+  svg {
+    fill: #80b0f0;
+    transition: fill 300ms ease-in;
   }
 `;

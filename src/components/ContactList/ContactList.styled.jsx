@@ -25,6 +25,8 @@ export const Item = styled.li`
 `;
 
 export const Button = styled.button`
+  display: flex;
+  align-items: center;
   padding: 4px 8px;
   font: inherit;
   cursor: pointer;
@@ -35,5 +37,12 @@ export const Button = styled.button`
     background-color: #ff4a4a;
     border: 3px solid #2d2d2d;
     color: white;
+    svg {
+      fill: white;
+    }
+  }
+  svg {
+    transition: all 300ms ease-in;
+    padding-right: 5px;
   }
 `;

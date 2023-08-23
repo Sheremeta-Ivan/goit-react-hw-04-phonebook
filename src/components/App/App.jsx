@@ -4,6 +4,8 @@ import { nanoid } from 'nanoid';
 import ContactForm from 'components/ContactForm/ContactForm';
 import Filter from 'components/Filter/Filter';
 import ContactList from 'components/ContactList/ContactList';
+import { ToastContainer, toast, Slide } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const phoneContacts = [
   { id: 'id-1', name: 'Rosie Simpson', number: '459-12-56' },
@@ -29,7 +31,9 @@ const App = () => {
     );
 
     if (isInContacts) {
-      alert(`${contact.name} is already in contacts`);
+      toast.info(`${contact.name} is already in contacts`, {
+        position: toast.POSITION.TOP_RIGHT,
+      });
       return;
     }
 
@@ -61,6 +65,7 @@ const App = () => {
 
   return (
     <Container>
+      <ToastContainer transition={Slide} />
       <Title>Phonebook</Title>
 
       <ContactForm onSubmit={addContact} />
